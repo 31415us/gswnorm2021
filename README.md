@@ -1,7 +1,9 @@
 
 # gswnorm2021
 
-Repository for the 2021 Shared Task on Text Normalization for Swiss German
+Repository for the 2021 Shared Task on Text Normalization for Swiss German.
+Further information and sign up form are on the 
+[task website](https://sites.google.com/view/gswnorm2021).
 
 ## Content
 
@@ -60,12 +62,18 @@ containing the annotated data, as well as your predictions.
 python -m evaluation --ann_path /path/to/data.json --predicted /path/to/predictions.json
 ```
 
+ERR reductions measures how much a model improves accuracy compared to doing nothing,
+i.e. copying all tokens from the input.
+
 ## Baseline
 
 We provide a simple baseline model that predicts the most common normalization
 in the training set for every token. The script will run 5 fold cross-validation
-given the path to the training data.
+given the path to the training data. 
 
 ```bash
 python -m baseline --data /path/to/train.json
 ```
+
+Note that this model is slightly more sophisticated
+than the simple copy-all baseline used to compute ERR.
